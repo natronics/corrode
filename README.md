@@ -36,6 +36,23 @@ cabal install
 This puts the `corrode` executable in `~/.cabal/bin`, so ensure that that
 location is in your `$PATH`.
 
+_Note:_ It's possible you might encounter an error similar to this:
+
+```
+cabal: Error: some packages failed to install:
+corrode-0.1.0.0 depends on language-c-0.5.0 which failed to install.
+language-c-0.5.0 failed during the configure step. The exception was:
+ExitFailure 1
+```
+
+Make sure `~/.cabal/bin` is in your path before you install, and install
+`happy` and `alex` manually:
+
+```
+cabal install happy
+cabal install alex
+```
+
 Alternately, you can use the [Haskell Stack](http://haskellstack.org) tool
 for Haskell development. If you don't have it, head over to their website
 and follow the instructions for installing it on your machine.
